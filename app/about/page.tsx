@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { site, socials } from "@/lib/site";
 import { skillGroups } from "@/lib/skills";
+import { experience } from "@/lib/experience";
 import { ArrowLink } from "@/components/ui";
 
 export const metadata: Metadata = {
@@ -28,19 +29,22 @@ export default function AboutPage() {
         </div>
 
         <div className="prose max-w-none text-[15px]">
-          {/* TODO: rewrite these three paragraphs in your own voice. */}
+          {/* TODO: make this sound like you — the facts are from your resume. */}
           <p>
-            I&apos;m a computer engineering student at {site.education.school}{" "}
-            ({site.education.degree}, {site.education.graduation}). I work across
-            the stack — from firmware on bare metal to web apps to training small
-            models — and I like problems that sit on the boundary between
-            hardware and software.
+            I&apos;m a computer engineering student at {site.education.school},
+            concentrating in AI/ML and graduating in May 2027. I like problems
+            that sit on the boundary between hardware and software — from analog
+            circuits and embedded firmware to CNN training pipelines and backend
+            automation.
           </p>
           <p>
-            Lately I&apos;ve been focused on [what you&apos;re actually doing —
-            a class, a research group, a side project]. Before that, [prior
-            experience or a formative project]. Outside of engineering, [one
-            genuine line — a hobby, a competition, a community].
+            Right now I&apos;m doing machine-learning research through The Data
+            Mine, linking soybean phenotypes to genotypes from field imagery for
+            Inari, and I&apos;m an electrical engineer on Purdue&apos;s IEEE
+            Racing team, where our battery pack took 1st in Battery Efficiency at
+            the EV Grand Prix. On the side I build tools like BrightGrade, an
+            LLM-assisted deadline tracker, and embedded projects like a Wi-Fi
+            sprinkler controller.
           </p>
           <p>{site.availability}</p>
         </div>
@@ -54,6 +58,38 @@ export default function AboutPage() {
           <span className="font-medium">{site.education.school}</span> —{" "}
           {site.education.degree}. {site.education.graduation}.
         </p>
+        <p className="mt-1 text-sm text-fg-muted">
+          Coursework: Digital System Design, Microprocessor Systems &amp;
+          Interfacing, Signals and Systems, Data Structures, Advanced C
+          Programming, Linear Algebra, Differential Equations. Activities: IEEE
+          Racing, Society of Women Engineers, The Data Mine.
+        </p>
+      </section>
+
+      <section className="mt-10">
+        <h2 className="font-mono text-xs uppercase tracking-wider text-fg-muted">
+          Experience
+        </h2>
+        <ol className="mt-4 flex flex-col gap-8">
+          {experience.map((job) => (
+            <li key={job.org}>
+              <div className="flex flex-wrap items-baseline justify-between gap-x-3">
+                <h3 className="text-sm font-medium">{job.org}</h3>
+                <span className="font-mono text-xs text-fg-muted">
+                  {job.period}
+                </span>
+              </div>
+              <p className="mt-0.5 text-sm text-fg-muted">
+                {job.title} · {job.location}
+              </p>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-fg-muted">
+                {job.points.map((p) => (
+                  <li key={p}>{p}</li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ol>
       </section>
 
       <section className="mt-10">

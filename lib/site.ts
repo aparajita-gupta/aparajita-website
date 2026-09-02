@@ -1,47 +1,45 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// EDIT THIS FILE FIRST. Everything below shows up across the site.
+// Synced from Aparajita_Resume(V8).pdf. Items still needing your input are
+// marked // TODO.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const site = {
-  name: "Your Name", // TODO
-  // Appears after your name in the browser tab, e.g. "Your Name — Computer Engineer".
-  role: "Computer Engineer", // TODO
-  // One line under your name in the hero. Keep it concrete.
+  name: "Aparajita Gupta",
+  // Appears after your name in the browser tab.
+  role: "Computer Engineer",
   tagline:
-    "Computer engineering student building across software, embedded systems, and applied AI.",
-  // 2–3 sentences for meta description / link previews.
+    "Computer engineering student at Purdue (AI/ML concentration), working across embedded systems, machine learning, and backend automation.",
   description:
-    "Portfolio of Your Name — a computer engineering student focused on software engineering, hardware/embedded systems, and applied AI. Selected projects, background, and resume.",
-  // Set this once you know your deployed URL (e.g. https://yourname.vercel.app
-  // or a custom domain). Used for absolute URLs in metadata / OG tags.
+    "Portfolio of Aparajita Gupta — a computer engineering student at Purdue University concentrating in AI/ML, with experience across embedded systems, machine learning research, and full-stack automation.",
+  // Set this once deployed (e.g. https://aparajitagupta.vercel.app or a custom domain).
   url: "https://your-portfolio.vercel.app", // TODO
-  email: "asthu0907@gmail.com", // TODO confirm this is the address you want public
-  location: "City, Country", // TODO — city-level only, no street address
-  // Expected graduation, availability — shown on the About page.
+  email: "gguptaparajita@gmail.com",
+  location: "San Ramon, California",
   education: {
-    school: "Your University", // TODO
-    degree: "B.S. Computer Engineering", // TODO
-    graduation: "Expected May 2027", // TODO
+    school: "Purdue University",
+    degree: "B.S. Computer Engineering, concentration in AI/ML",
+    graduation: "Graduating May 2027",
   },
-  availability: "Seeking Summer 2027 internships in SWE, embedded systems, or AI.", // TODO
+  availability:
+    "Seeking internships in software engineering, embedded systems, and AI/ML.",
 } as const;
 
 export type SocialLink = {
   label: string;
   href: string;
-  // Whether to show in the top nav (vs. footer only).
   primary?: boolean;
 };
 
 export const socials: SocialLink[] = [
-  { label: "GitHub", href: "https://github.com/yourhandle", primary: true }, // TODO
+  // TODO: replace with your real GitHub URL (remove this entry if you don't
+  // want to link it).
+  { label: "GitHub", href: "https://github.com/yourhandle", primary: true },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/yourhandle",
+    href: "https://www.linkedin.com/in/guptaaparajita",
     primary: true,
-  }, // TODO
+  },
   { label: "Email", href: `mailto:${site.email}`, primary: true },
-  // Resume PDF lives in /public. Replace resume.pdf with your real file.
   { label: "Resume", href: "/resume.pdf", primary: true },
 ];
 
