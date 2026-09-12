@@ -3,7 +3,7 @@ import Image from "next/image";
 import { site, socials } from "@/lib/site";
 import { skillGroups } from "@/lib/skills";
 import { experience } from "@/lib/experience";
-import { ArrowLink } from "@/components/ui";
+import { ArrowLink, Eyebrow } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "About",
@@ -12,8 +12,10 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div>
-      <h1 className="text-2xl font-semibold tracking-tight">About</h1>
+    <div className="relative">
+      <div className="hero-glow" aria-hidden />
+      <Eyebrow>◆ About</Eyebrow>
+      <h1 className="mt-4 text-2xl font-semibold tracking-tight">About</h1>
 
       <div className="mt-8 flex flex-col gap-8 sm:flex-row-reverse sm:items-start">
         {/* Replace /public/portrait.svg with a real photo (square, ~600px) and

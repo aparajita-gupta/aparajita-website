@@ -36,7 +36,9 @@ export default async function ProjectPage(
   const { links } = project;
 
   return (
-    <article>
+    <article className="relative">
+      <div className="hero-glow" aria-hidden />
+
       <Link
         href="/projects"
         className="text-sm text-fg-muted transition-colors hover:text-fg"
@@ -49,7 +51,7 @@ export default async function ProjectPage(
           {project.category.map((c) => (
             <span
               key={c}
-              className="font-mono text-[11px] uppercase tracking-wider text-fg-muted"
+              className="rounded-full bg-accent/10 px-2 py-0.5 font-mono text-[11px] uppercase tracking-wider text-accent"
             >
               {categoryLabels[c]}
             </span>

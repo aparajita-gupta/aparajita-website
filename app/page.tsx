@@ -2,30 +2,40 @@ import { featuredProjects } from "@/lib/projects";
 import { skillGroups } from "@/lib/skills";
 import { navLinks, site, socials } from "@/lib/site";
 import { ProjectCard } from "@/components/project-card";
-import { ArrowLink, Section } from "@/components/ui";
+import { ArrowLink, Button, Eyebrow, Section } from "@/components/ui";
 
 export default function HomePage() {
+  const primary = socials.find((s) => s.label === "Email") ?? socials[0];
+  const rest = socials.filter((s) => s !== primary);
+
   return (
     <div>
       {/* Hero */}
-      <section>
-        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+      <section className="relative">
+        <div className="hero-glow" aria-hidden />
+
+        <Eyebrow>◆ Computer Engineering @ Purdue</Eyebrow>
+
+        <h1 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
           {site.name}
         </h1>
         <p className="mt-4 max-w-xl text-lg leading-relaxed text-fg-muted">
           {site.tagline}
         </p>
-        <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2">
-          {socials.map((s) => (
-            <a
+
+        <div className="mt-6 flex flex-wrap items-center gap-3">
+          <Button href={primary.href} external={primary.href.startsWith("http")}>
+            {primary.label}
+          </Button>
+          {rest.map((s) => (
+            <Button
               key={s.href}
               href={s.href}
-              target={s.href.startsWith("http") ? "_blank" : undefined}
-              rel="noopener noreferrer"
-              className="text-sm font-medium text-fg-muted transition-colors hover:text-fg"
+              variant="outline"
+              external={s.href.startsWith("http")}
             >
-              {s.label} ↗
-            </a>
+              {s.label}
+            </Button>
           ))}
         </div>
       </section>

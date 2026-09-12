@@ -11,24 +11,28 @@
 
 :root {
   --bg: #ffffff;
-  --bg-subtle: #f4f4f5;
+  --bg-subtle: #f5f3ff;
   --card: #ffffff;
-  --border: #e4e4e7;
+  --border: #e4e0f5;
   --fg: #18181b;
-  --fg-muted: #52525b;
-  --accent: #4f46e5;
+  --fg-muted: #56526b;
+  --accent: #7c3aed;
+  --accent-2: #a78bfa;
   --accent-fg: #ffffff;
+  --glow: 124 58 237;
 }
 
 .dark {
-  --bg: #09090b;
-  --bg-subtle: #131316;
-  --card: #131316;
-  --border: #27272a;
-  --fg: #fafafa;
-  --fg-muted: #a1a1aa;
-  --accent: #818cf8;
-  --accent-fg: #09090b;
+  --bg: #08070c;
+  --bg-subtle: #140f1f;
+  --card: #120e1b;
+  --border: #2a2140;
+  --fg: #f5f3fa;
+  --fg-muted: #a89cc7;
+  --accent: #a78bfa;
+  --accent-2: #c4b5fd;
+  --accent-fg: #0b0713;
+  --glow: 139 92 246;
 }
 
 @theme inline {
@@ -39,6 +43,7 @@
   --color-fg: var(--fg);
   --color-fg-muted: var(--fg-muted);
   --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
   --color-accent-fg: var(--accent-fg);
 }
 
@@ -79,6 +84,61 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ── Themed glow accents ─────────────────────────────────────────────── */
+
+/* Soft radial aura behind the hero heading. Pure CSS, no extra markup
+   beyond a positioned wrapper with this class. */
+.hero-glow {
+  position: absolute;
+  inset: -8rem -2rem auto -2rem;
+  height: 26rem;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    60% 55% at 50% 0%,
+    rgb(var(--glow) / 0.35),
+    rgb(var(--glow) / 0.12) 45%,
+    transparent 75%
+  );
+  filter: blur(10px);
+}
+
+.dark .hero-glow {
+  background: radial-gradient(
+    55% 60% at 50% 0%,
+    rgb(var(--glow) / 0.55),
+    rgb(var(--glow) / 0.18) 45%,
+    transparent 75%
+  );
+}
+
+/* Pill-shaped eyebrow tag shown above section headings. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgb(var(--glow) / 0.08);
+  padding: 0.3rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+/* Card hover: a subtle violet glow + lifted border, instead of flat gray. */
+.card-glow {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+.card-glow:hover {
+  border-color: rgb(var(--glow) / 0.5);
+  box-shadow: 0 0 0 1px rgb(var(--glow) / 0.15),
+    0 8px 30px -8px rgb(var(--glow) / 0.35);
 }
 
 /* Simple prose styling for project write-ups */

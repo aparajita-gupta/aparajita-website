@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { sortedProjects } from "@/lib/projects";
 import { ProjectsGrid } from "@/components/projects-grid";
+import { Eyebrow } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -9,8 +10,10 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div>
-      <h1 className="text-2xl font-semibold tracking-tight">Projects</h1>
+    <div className="relative">
+      <div className="hero-glow" aria-hidden />
+      <Eyebrow>◆ Selected work</Eyebrow>
+      <h1 className="mt-4 text-2xl font-semibold tracking-tight">Projects</h1>
       <p className="mt-3 max-w-xl text-sm leading-relaxed text-fg-muted">
         A selection of what I&apos;ve built. Each write-up covers the problem, how
         it works, and what was hard about it.

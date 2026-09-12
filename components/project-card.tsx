@@ -6,7 +6,7 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className="group flex flex-col rounded-lg border border-border bg-card p-5 transition-colors hover:border-fg-muted"
+      className="card-glow group flex flex-col rounded-lg border border-border bg-card p-5"
     >
       <div className="flex items-start justify-between gap-3">
         <h3 className="font-medium tracking-tight group-hover:text-accent">
@@ -25,7 +25,7 @@ export function ProjectCard({ project }: { project: Project }) {
         {project.category.map((c) => (
           <span
             key={c}
-            className="font-mono text-[11px] uppercase tracking-wider text-fg-muted"
+            className="rounded-full bg-accent/10 px-2 py-0.5 font-mono text-[11px] uppercase tracking-wider text-accent"
           >
             {categoryLabels[c]}
           </span>

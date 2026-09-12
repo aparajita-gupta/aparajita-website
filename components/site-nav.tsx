@@ -16,7 +16,14 @@ export function SiteNav() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-bg/80 backdrop-blur">
       <nav className="mx-auto flex h-16 max-w-3xl items-center justify-between px-5">
-        <Link href="/" className="font-mono text-sm font-medium tracking-tight">
+        <Link
+          href="/"
+          className="flex items-center gap-2 font-mono text-sm font-medium tracking-tight"
+        >
+          <span
+            aria-hidden
+            className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_8px_2px_rgb(var(--glow)/0.6)]"
+          />
           {site.name}
         </Link>
 
