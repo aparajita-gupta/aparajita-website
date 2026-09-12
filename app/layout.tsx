@@ -46,6 +46,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="flex min-h-full flex-col font-sans">
+        <div className="ambient-glow" aria-hidden />
         <SiteNav />
         <main className="mx-auto w-full max-w-3xl flex-1 px-5 py-12 sm:py-16">
           {children}

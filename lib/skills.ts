@@ -1,11 +1,13 @@
 // Synced from the Technical Skills section of Aparajita_Resume(V8).pdf.
-export const skillGroups: { title: string; items: string[] }[] = [
+export const skillGroups: { title: string; icon: string; items: string[] }[] = [
   {
     title: "Languages",
+    icon: "</>",
     items: ["C / C++", "C#", "Python", "Java", "SystemVerilog", "MATLAB", "Bash"],
   },
   {
     title: "Embedded & Hardware",
+    icon: "⚙",
     items: [
       "ESP32",
       "Microprocessor systems & interfacing",
@@ -19,6 +21,7 @@ export const skillGroups: { title: string; items: string[] }[] = [
   },
   {
     title: "AI / ML & Data",
+    icon: "◆",
     items: [
       "PyTorch",
       "CNNs (ResNet-18, custom)",
@@ -31,6 +34,7 @@ export const skillGroups: { title: string; items: string[] }[] = [
   },
   {
     title: "Tools & Infra",
+    icon: "▣",
     items: [
       "Git / GitHub",
       "Linux / Unix shell",

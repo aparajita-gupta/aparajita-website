@@ -41,11 +41,11 @@ export function Button({
   external?: boolean;
 }) {
   const base =
-    "inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition-all";
+    "inline-flex items-center gap-1.5 rounded-xl px-4 py-2 text-sm font-medium transition-all";
   const styles =
     variant === "primary"
-      ? "bg-accent text-accent-fg shadow-[0_0_0_1px_rgb(var(--glow)/0.4),0_10px_30px_-10px_rgb(var(--glow)/0.6)] hover:shadow-[0_0_0_1px_rgb(var(--glow)/0.6),0_14px_36px_-8px_rgb(var(--glow)/0.75)] hover:brightness-110"
-      : "border border-border text-fg hover:border-accent/60 hover:bg-bg-subtle";
+      ? "text-white bg-[linear-gradient(135deg,var(--accent-from),var(--accent-to))] shadow-[0_0_0_1px_rgb(var(--glow)/0.4),0_10px_30px_-10px_rgb(var(--glow)/0.7)] hover:shadow-[0_0_0_1px_rgb(var(--glow)/0.6),0_14px_36px_-8px_rgb(var(--glow)/0.85)] hover:brightness-110"
+      : "border border-border bg-card text-fg hover:border-accent/60 hover:bg-bg-subtle";
 
   const props = external
     ? { target: "_blank", rel: "noopener noreferrer" }
@@ -62,6 +62,14 @@ export function Button({
     <a href={href} className={`${base} ${styles}`} {...props}>
       {children}
     </a>
+  );
+}
+
+export function IconBadge({ icon }: { icon: ReactNode }) {
+  return (
+    <span className="icon-badge" aria-hidden>
+      {icon}
+    </span>
   );
 }
 

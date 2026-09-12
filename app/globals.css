@@ -16,23 +16,29 @@
   --border: #e4e0f5;
   --fg: #18181b;
   --fg-muted: #56526b;
-  --accent: #7c3aed;
+  --accent: #6d28d9;
   --accent-2: #a78bfa;
+  --accent-from: #4f46e5;
+  --accent-to: #a855f7;
   --accent-fg: #ffffff;
   --glow: 124 58 237;
+  --glow-2: 79 70 229;
 }
 
 .dark {
-  --bg: #08070c;
-  --bg-subtle: #140f1f;
-  --card: #120e1b;
+  --bg: #060509;
+  --bg-subtle: #130f1e;
+  --card: #100c19;
   --border: #2a2140;
   --fg: #f5f3fa;
   --fg-muted: #a89cc7;
-  --accent: #a78bfa;
+  --accent: #b79bfb;
   --accent-2: #c4b5fd;
+  --accent-from: #6d5ef8;
+  --accent-to: #c026f7;
   --accent-fg: #0b0713;
   --glow: 139 92 246;
+  --glow-2: 99 91 248;
 }
 
 @theme inline {
@@ -88,44 +94,82 @@
 
 /* ── Themed glow accents ─────────────────────────────────────────────── */
 
-/* Soft radial aura behind the hero heading. Pure CSS, no extra markup
-   beyond a positioned wrapper with this class. */
+/* Ambient purple/blue glow behind the entire page, fixed so it stays put
+   while the page scrolls ("purples in the back"). Layered radial gradients
+   at a few anchor points, kept subtle in light mode. */
+.ambient-glow {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(38rem 26rem at 12% -8%, rgb(var(--glow-2) / 0.16), transparent 60%),
+    radial-gradient(34rem 30rem at 100% 8%, rgb(var(--glow) / 0.14), transparent 60%),
+    radial-gradient(40rem 30rem at 50% 115%, rgb(var(--glow) / 0.1), transparent 65%);
+}
+
+.dark .ambient-glow {
+  background:
+    radial-gradient(40rem 28rem at 10% -10%, rgb(var(--glow-2) / 0.35), transparent 60%),
+    radial-gradient(36rem 32rem at 105% 5%, rgb(var(--glow) / 0.32), transparent 62%),
+    radial-gradient(44rem 32rem at 50% 115%, rgb(var(--glow) / 0.22), transparent 65%);
+}
+
+/* Extra concentrated glow behind a hero heading, layered on top of the
+   ambient background. */
 .hero-glow {
   position: absolute;
-  inset: -8rem -2rem auto -2rem;
-  height: 26rem;
+  inset: -6rem -2rem auto -2rem;
+  height: 22rem;
   z-index: -1;
   pointer-events: none;
   background: radial-gradient(
-    60% 55% at 50% 0%,
-    rgb(var(--glow) / 0.35),
-    rgb(var(--glow) / 0.12) 45%,
-    transparent 75%
+    55% 60% at 30% 0%,
+    rgb(var(--glow-2) / 0.3),
+    transparent 70%
   );
-  filter: blur(10px);
+  filter: blur(6px);
 }
 
 .dark .hero-glow {
   background: radial-gradient(
-    55% 60% at 50% 0%,
-    rgb(var(--glow) / 0.55),
-    rgb(var(--glow) / 0.18) 45%,
-    transparent 75%
+    55% 65% at 30% 0%,
+    rgb(var(--glow-2) / 0.5),
+    transparent 70%
   );
 }
 
-/* Pill-shaped eyebrow tag shown above section headings. */
+/* Gradient text for emphasis words. */
+.gradient-text {
+  background: linear-gradient(100deg, var(--accent-from), var(--accent-to));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Eyebrow tag shown above section headings — small dot + tracked label. */
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 0.4em;
+  gap: 0.55em;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: rgb(var(--glow) / 0.08);
-  padding: 0.3rem 0.85rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--accent);
+  background: rgb(var(--glow) / 0.07);
+  padding: 0.3rem 0.85rem 0.3rem 0.7rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+}
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  height: 0.4em;
+  width: 0.4em;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent-from), var(--accent-to));
+  box-shadow: 0 0 6px 1px rgb(var(--glow) / 0.7);
 }
 
 /* Card hover: a subtle violet glow + lifted border, instead of flat gray. */
@@ -139,6 +183,20 @@
   border-color: rgb(var(--glow) / 0.5);
   box-shadow: 0 0 0 1px rgb(var(--glow) / 0.15),
     0 8px 30px -8px rgb(var(--glow) / 0.35);
+}
+
+/* Small gradient-square icon badge, used ahead of skill/category groups. */
+.icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.25rem;
+  width: 2.25rem;
+  flex-shrink: 0;
+  border-radius: 0.65rem;
+  font-size: 1.05rem;
+  background: linear-gradient(135deg, rgb(var(--glow-2) / 0.18), rgb(var(--glow) / 0.22));
+  border: 1px solid rgb(var(--glow) / 0.3);
 }
 
 /* Simple prose styling for project write-ups */

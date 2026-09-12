@@ -6,7 +6,7 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className="card-glow group flex flex-col rounded-lg border border-border bg-card p-5"
+      className="card-glow group flex flex-col rounded-xl border border-border bg-card p-5"
     >
       <div className="flex items-start justify-between gap-3">
         <h3 className="font-medium tracking-tight group-hover:text-accent">

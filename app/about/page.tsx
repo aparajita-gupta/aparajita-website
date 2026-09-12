@@ -3,7 +3,7 @@ import Image from "next/image";
 import { site, socials } from "@/lib/site";
 import { skillGroups } from "@/lib/skills";
 import { experience } from "@/lib/experience";
-import { ArrowLink, Eyebrow } from "@/components/ui";
+import { ArrowLink, Eyebrow, IconBadge } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "About",
@@ -14,7 +14,7 @@ export default function AboutPage() {
   return (
     <div className="relative">
       <div className="hero-glow" aria-hidden />
-      <Eyebrow>◆ About</Eyebrow>
+      <Eyebrow>About</Eyebrow>
       <h1 className="mt-4 text-2xl font-semibold tracking-tight">About</h1>
 
       <div className="mt-8 flex flex-col gap-8 sm:flex-row-reverse sm:items-start">
@@ -98,14 +98,22 @@ export default function AboutPage() {
         <h2 className="font-mono text-xs uppercase tracking-wider text-fg-muted">
           Skills
         </h2>
-        <dl className="mt-3 grid gap-5 sm:grid-cols-2">
+        <div className="mt-3 grid gap-4 sm:grid-cols-2">
           {skillGroups.map((g) => (
-            <div key={g.title}>
-              <dt className="text-sm font-medium">{g.title}</dt>
-              <dd className="mt-1 text-sm text-fg-muted">{g.items.join(" · ")}</dd>
+            <div
+              key={g.title}
+              className="card-glow rounded-xl border border-border bg-card p-4"
+            >
+              <div className="flex items-center gap-3">
+                <IconBadge icon={g.icon} />
+                <h3 className="text-sm font-medium">{g.title}</h3>
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-fg-muted">
+                {g.items.join(" · ")}
+              </p>
             </div>
           ))}
-        </dl>
+        </div>
       </section>
 
       <section className="mt-10">

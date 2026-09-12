@@ -12,7 +12,7 @@ export default function ProjectsPage() {
   return (
     <div className="relative">
       <div className="hero-glow" aria-hidden />
-      <Eyebrow>◆ Selected work</Eyebrow>
+      <Eyebrow>Selected work</Eyebrow>
       <h1 className="mt-4 text-2xl font-semibold tracking-tight">Projects</h1>
       <p className="mt-3 max-w-xl text-sm leading-relaxed text-fg-muted">
         A selection of what I&apos;ve built. Each write-up covers the problem, how

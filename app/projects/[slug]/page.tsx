@@ -101,7 +101,7 @@ export default async function ProjectPage(
           {project.images.map((img) => (
             <div
               key={img.src}
-              className="overflow-hidden rounded-lg border border-border bg-bg-subtle"
+              className="overflow-hidden rounded-xl border border-border bg-bg-subtle"
             >
               <Image
                 src={img.src}
