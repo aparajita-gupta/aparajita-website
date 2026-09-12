@@ -15,7 +15,7 @@ export function SiteNav() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-bg/80 backdrop-blur">
-      <nav className="mx-auto flex h-16 max-w-3xl items-center justify-between px-5">
+      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8 lg:px-12">
         <Link
           href="/"
           className="flex items-center gap-2 font-mono text-sm font-medium tracking-tight"

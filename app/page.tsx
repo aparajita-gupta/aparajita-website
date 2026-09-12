@@ -19,7 +19,7 @@ export default function HomePage() {
         <h1 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
           {site.name}
         </h1>
-        <p className="mt-4 max-w-xl text-lg leading-relaxed text-fg-muted">
+        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-fg-muted">
           Building across{" "}
           <span className="gradient-text font-medium">hardware and software</span> —
           embedded systems, machine learning, and backend automation.
@@ -46,7 +46,7 @@ export default function HomePage() {
         title="Featured Projects"
         action={<ArrowLink href="/projects">All projects</ArrowLink>}
       >
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {featuredProjects.map((p) => (
             <ProjectCard key={p.slug} project={p} />
           ))}
@@ -54,7 +54,7 @@ export default function HomePage() {
       </Section>
 
       <Section title="Skills">
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {skillGroups.map((g) => (
             <div
               key={g.title}

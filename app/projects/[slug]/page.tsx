@@ -36,7 +36,7 @@ export default async function ProjectPage(
   const { links } = project;
 
   return (
-    <article className="relative">
+    <article className="relative max-w-3xl">
       <div className="hero-glow" aria-hidden />
 
       <Link

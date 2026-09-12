@@ -17,7 +17,7 @@ export default function AboutPage() {
       <Eyebrow>About</Eyebrow>
       <h1 className="mt-4 text-2xl font-semibold tracking-tight">About</h1>
 
-      <div className="mt-8 flex flex-col gap-8 sm:flex-row-reverse sm:items-start">
+      <div className="mt-8 flex max-w-3xl flex-col gap-8 sm:flex-row-reverse sm:items-start">
         {/* Replace /public/portrait.svg with a real photo (square, ~600px) and
             update the src below to "/portrait.jpg". */}
         <div className="relative h-40 w-40 shrink-0 overflow-hidden rounded-xl border border-border bg-bg-subtle">
@@ -30,7 +30,7 @@ export default function AboutPage() {
           />
         </div>
 
-        <div className="prose max-w-none text-[15px]">
+        <div className="prose max-w-2xl text-[15px]">
           {/* TODO: make this sound like you — the facts are from your resume. */}
           <p>
             I&apos;m a computer engineering student at {site.education.school},
@@ -52,7 +52,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <section className="mt-12">
+      <section className="mt-12 max-w-3xl">
         <h2 className="font-mono text-xs uppercase tracking-wider text-fg-muted">
           Education
         </h2>
@@ -68,7 +68,7 @@ export default function AboutPage() {
         </p>
       </section>
 
-      <section className="mt-10">
+      <section className="mt-10 max-w-3xl">
         <h2 className="font-mono text-xs uppercase tracking-wider text-fg-muted">
           Experience
         </h2>
@@ -98,7 +98,7 @@ export default function AboutPage() {
         <h2 className="font-mono text-xs uppercase tracking-wider text-fg-muted">
           Skills
         </h2>
-        <div className="mt-3 grid gap-4 sm:grid-cols-2">
+        <div className="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {skillGroups.map((g) => (
             <div
               key={g.title}
@@ -116,7 +116,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mt-10">
+      <section className="mt-10 max-w-3xl">
         <h2 className="font-mono text-xs uppercase tracking-wider text-fg-muted">
           Links
         </h2>

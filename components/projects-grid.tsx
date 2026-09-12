@@ -38,7 +38,7 @@ export function ProjectsGrid({ projects }: { projects: Project[] }) {
         ))}
       </div>
 
-      <div className="mt-6 grid gap-4 sm:grid-cols-2">
+      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {shown.map((p) => (
           <ProjectCard key={p.slug} project={p} />
         ))}

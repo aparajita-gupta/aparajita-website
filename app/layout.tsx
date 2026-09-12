@@ -48,7 +48,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="flex min-h-full flex-col font-sans">
         <div className="ambient-glow" aria-hidden />
         <SiteNav />
-        <main className="mx-auto w-full max-w-3xl flex-1 px-5 py-12 sm:py-16">
+        <main className="mx-auto w-full max-w-6xl flex-1 px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
           {children}
         </main>
         <SiteFooter />
