@@ -30,7 +30,7 @@ export default function AboutPage() {
           />
         </div>
 
-        <div className="prose max-w-2xl text-[15px]">
+        <div className="prose max-w-2xl text-[19px]">
           {/* TODO: make this sound like you — the facts are from your resume. */}
           <p>
             I&apos;m a computer engineering student at {site.education.school},

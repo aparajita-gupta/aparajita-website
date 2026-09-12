@@ -7,6 +7,17 @@
 @theme {
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+
+  /* Site-wide type scale bumped 25% over Tailwind's defaults (spacing/sizing
+     tokens are untouched, so only text grows, not layout). */
+  --text-xs: 0.9375rem; /* 15px, was 12px */
+  --text-sm: 1.09375rem; /* 17.5px, was 14px */
+  --text-base: 1.25rem; /* 20px, was 16px */
+  --text-lg: 1.40625rem; /* 22.5px, was 18px */
+  --text-xl: 1.5625rem; /* 25px, was 20px */
+  --text-2xl: 1.875rem; /* 30px, was 24px */
+  --text-3xl: 2.34375rem; /* 37.5px, was 30px */
+  --text-4xl: 2.8125rem; /* 45px, was 36px */
 }
 
 :root {
@@ -156,7 +167,7 @@
   border: 1px solid var(--border);
   background: rgb(var(--glow) / 0.07);
   padding: 0.3rem 0.85rem 0.3rem 0.7rem;
-  font-size: 0.7rem;
+  font-size: 0.875rem; /* 25% up from 0.7rem */
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -194,7 +205,7 @@
   width: 2.25rem;
   flex-shrink: 0;
   border-radius: 0.65rem;
-  font-size: 1.05rem;
+  font-size: 1.3125rem; /* 25% up from 1.05rem */
   background: linear-gradient(135deg, rgb(var(--glow-2) / 0.18), rgb(var(--glow) / 0.22));
   border: 1px solid rgb(var(--glow) / 0.3);
 }
@@ -204,7 +215,7 @@
   margin-top: 1rem;
 }
 .prose h2 {
-  font-size: 1.125rem;
+  font-size: 1.40625rem; /* 25% up from 1.125rem */
   font-weight: 600;
   margin-top: 2rem;
   letter-spacing: -0.01em;

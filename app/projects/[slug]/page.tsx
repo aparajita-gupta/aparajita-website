@@ -51,7 +51,7 @@ export default async function ProjectPage(
           {project.category.map((c) => (
             <span
               key={c}
-              className="rounded-full bg-accent/10 px-2 py-0.5 font-mono text-[11px] uppercase tracking-wider text-accent"
+              className="rounded-full bg-accent/10 px-2 py-0.5 font-mono text-[14px] uppercase tracking-wider text-accent"
             >
               {categoryLabels[c]}
             </span>
@@ -60,7 +60,7 @@ export default async function ProjectPage(
         <h1 className="mt-2 text-2xl font-semibold tracking-tight">
           {project.title}
         </h1>
-        <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-fg-muted">
+        <p className="mt-3 max-w-xl text-[19px] leading-relaxed text-fg-muted">
           {project.summary}
         </p>
 

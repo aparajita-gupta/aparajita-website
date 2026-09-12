@@ -25,7 +25,7 @@ export function ProjectCard({ project }: { project: Project }) {
         {project.category.map((c) => (
           <span
             key={c}
-            className="rounded-full bg-accent/10 px-2 py-0.5 font-mono text-[11px] uppercase tracking-wider text-accent"
+            className="rounded-full bg-accent/10 px-2 py-0.5 font-mono text-[14px] uppercase tracking-wider text-accent"
           >
             {categoryLabels[c]}
           </span>
