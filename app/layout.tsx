@@ -1,13 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+// Body text.
+const inter = Inter({ variable: "--font-body", subsets: ["latin"] });
+// Headings (h1–h6, applied globally in globals.css).
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-heading-face",
+  subsets: ["latin"],
+});
+// Section labels / tags — anywhere the site already uses `font-mono`.
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-mono-face",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -39,7 +49,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full`}
+      className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} h-full`}
       suppressHydrationWarning
     >
       <head>
