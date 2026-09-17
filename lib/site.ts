@@ -1,6 +1,6 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// Synced from Aparajita_Resume(V8).pdf. Items still needing your input are
-// marked // TODO.
+// Synced from Aparajita_Resume.pdf (latest, Sep 14 2026). Items still needing
+// your input are marked // TODO.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const site = {
@@ -11,14 +11,13 @@ export const site = {
     "Computer engineering student at Purdue (AI/ML concentration), working across embedded systems, machine learning, and backend automation.",
   description:
     "Portfolio of Aparajita Gupta — a computer engineering student at Purdue University concentrating in AI/ML, with experience across embedded systems, machine learning research, and full-stack automation.",
-  // Set this once deployed (e.g. https://aparajitagupta.vercel.app or a custom domain).
-  url: "https://your-portfolio.vercel.app", // TODO
+  url: "https://aparajitawebsite.vercel.app",
   email: "gguptaparajita@gmail.com",
   location: "San Ramon, California",
   education: {
     school: "Purdue University",
-    degree: "B.S. Computer Engineering, concentration in AI/ML",
-    graduation: "Graduating May 2027",
+    degree: "B.S. Computer Engineering, Concentration in AI/ML",
+    graduation: "Graduating May 2028",
   },
   availability:
     "Seeking internships in software engineering, embedded systems, and AI/ML.",
@@ -33,7 +32,7 @@ export type SocialLink = {
 export const socials: SocialLink[] = [
   // TODO: replace with your real GitHub URL (remove this entry if you don't
   // want to link it).
-  { label: "GitHub", href: "https://github.com/yourhandle", primary: true },
+  { label: "GitHub", href: "https://github.com/aparajita-gupta", primary: true },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/guptaaparajita",
@@ -44,6 +43,8 @@ export const socials: SocialLink[] = [
 ];
 
 export const navLinks = [
-  { label: "Projects", href: "/projects" },
+  // Scrolls to the #projects section on the home page rather than routing
+  // to a separate page — see components/site-nav.tsx for the scroll handling.
+  { label: "Projects", href: "/#projects" },
   { label: "About", href: "/about" },
 ];

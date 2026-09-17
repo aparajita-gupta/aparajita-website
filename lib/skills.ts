@@ -1,4 +1,4 @@
-// Synced from the Technical Skills section of Aparajita_Resume(V8).pdf.
+// Synced from the Technical Skills section of Aparajita_Resume.pdf (latest, Sep 14 2026).
 export const skillGroups: { title: string; icon: string; items: string[] }[] = [
   {
     title: "Languages",
@@ -24,10 +24,11 @@ export const skillGroups: { title: string; icon: string; items: string[] }[] = [
     icon: "◆",
     items: [
       "PyTorch",
+      "TensorFlow / Keras",
       "CNNs (ResNet-18, custom)",
       "scikit-learn (KNN, SVM, Random Forest)",
       "Image segmentation (OTSU, SAM)",
-      "NumPy / pandas / Polars",
+      "NumPy / pandas / Polars / Matplotlib",
       "EDA & feature extraction",
       "Google Gemini API",
     ],
