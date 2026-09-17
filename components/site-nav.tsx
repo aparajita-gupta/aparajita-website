@@ -4,14 +4,30 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { navLinks, site, socials } from "@/lib/site";
+import { scrollToId } from "./hash-scroll";
 import { ThemeToggle } from "./theme-toggle";
 
 export function SiteNav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const isActive = (href: string) => {
+    // Hash links (e.g. "/#projects") point at a section on the home page,
+    // not a separate route — treat them as active whenever we're on "/".
+    if (href.startsWith("/#")) return pathname === "/";
+    return href === "/" ? pathname === "/" : pathname.startsWith(href);
+  };
+
+  // Already on "/" and clicking a "/#section" link: Next's client router
+  // won't fire a native hashchange (it uses pushState), and the page isn't
+  // remounting, so HashScroll's mount effect won't re-run either. Scroll
+  // directly in that case; arriving from another page is handled by
+  // HashScroll on mount instead.
+  const handleNavClick = (href: string) => {
+    if (href.startsWith("/#") && pathname === "/") {
+      scrollToId(href.slice(2));
+    }
+  };
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-bg/80 backdrop-blur">
@@ -33,6 +49,8 @@ export function SiteNav() {
               <li key={l.href}>
                 <Link
                   href={l.href}
+                  scroll={!l.href.startsWith("/#")}
+                  onClick={() => handleNavClick(l.href)}
                   className={`rounded-md px-3 py-2 text-sm transition-colors hover:text-fg ${
                     isActive(l.href) ? "text-fg" : "text-fg-muted"
                   }`}
@@ -64,7 +82,11 @@ export function SiteNav() {
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  onClick={() => setOpen(false)}
+                  scroll={!l.href.startsWith("/#")}
+                  onClick={() => {
+                    handleNavClick(l.href);
+                    setOpen(false);
+                  }}
                   className="block rounded-md px-3 py-2 text-sm text-fg-muted hover:text-fg"
                 >
                   {l.label}

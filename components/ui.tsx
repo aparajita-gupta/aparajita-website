@@ -2,19 +2,21 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 export function Section({
+  id,
   title,
   action,
   children,
 }: {
+  id?: string;
   title?: string;
   action?: ReactNode;
   children: ReactNode;
 }) {
   return (
-    <section className="mt-16">
+    <section id={id} className="mt-16 scroll-mt-24">
       {title && (
         <div className="mb-6 flex items-baseline justify-between">
-          <h2 className="text-sm font-medium uppercase tracking-widest text-fg-muted">
+          <h2 className="font-mono text-sm font-medium uppercase tracking-widest text-fg-muted">
             {title}
           </h2>
           {action}

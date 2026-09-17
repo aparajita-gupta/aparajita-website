@@ -1,8 +1,9 @@
-import { featuredProjects } from "@/lib/projects";
+import { sortedProjects } from "@/lib/projects";
 import { skillGroups } from "@/lib/skills";
 import { navLinks, site, socials } from "@/lib/site";
-import { ProjectCard } from "@/components/project-card";
+import { ProjectsGrid } from "@/components/projects-grid";
 import { ArrowLink, Button, Eyebrow, IconBadge, Section } from "@/components/ui";
+import { HashScroll } from "@/components/hash-scroll";
 
 export default function HomePage() {
   const primary = socials.find((s) => s.label === "Email") ?? socials[0];
@@ -10,16 +11,19 @@ export default function HomePage() {
 
   return (
     <div>
-      {/* Hero */}
-      <section className="relative">
+      <HashScroll />
+
+      {/* Hero — big name, takes most of the first screen so there's real
+          "scroll down to see more" motion into Projects/Skills below. */}
+      <section className="relative flex min-h-[75vh] flex-col justify-center">
         <div className="hero-glow" aria-hidden />
 
         <Eyebrow>Computer Engineering @ Purdue</Eyebrow>
 
-        <h1 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+        <h1 className="mt-5 text-6xl font-semibold tracking-tight sm:text-7xl lg:text-8xl">
           {site.name}
         </h1>
-        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-fg-muted">
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-fg-muted">
           Building across{" "}
           <span className="gradient-text font-medium">hardware and software</span> —
           embedded systems, machine learning, and backend automation.
@@ -42,18 +46,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Section
-        title="Featured Projects"
-        action={<ArrowLink href="/projects">All projects</ArrowLink>}
-      >
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {featuredProjects.map((p) => (
-            <ProjectCard key={p.slug} project={p} />
-          ))}
-        </div>
+      <Section id="projects" title="Projects">
+        <ProjectsGrid projects={sortedProjects} />
       </Section>
 
-      <Section title="Skills">
+      <Section id="skills" title="Skills">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {skillGroups.map((g) => (
             <div
@@ -64,9 +61,14 @@ export default function HomePage() {
                 <IconBadge icon={g.icon} />
                 <h3 className="text-sm font-medium">{g.title}</h3>
               </div>
-              <p className="mt-3 text-sm leading-relaxed text-fg-muted">
-                {g.items.join(" · ")}
-              </p>
+              <ul className="mt-3 space-y-1 text-sm leading-relaxed text-fg-muted">
+                {g.items.map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span aria-hidden="true">·</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
