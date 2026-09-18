@@ -34,13 +34,12 @@ export const skillGroups: { title: string; icon: string; items: string[] }[] = [
     ],
   },
   {
-    title: "Tools & Infra",
+    title: "Tools",
     icon: "▣",
     items: [
       "Git / GitHub",
       "Linux / Unix shell",
       "SQL",
-      "MongoDB",
       "R",
       "React.js",
       "Playwright",

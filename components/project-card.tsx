@@ -8,16 +8,11 @@ export function ProjectCard({ project }: { project: Project }) {
       href={`/projects/${project.slug}`}
       className="card-glow group flex h-full flex-col rounded-xl border border-border bg-card p-5"
     >
-      <div className="flex items-start justify-between gap-3">
-        <h3 className="line-clamp-2 font-medium tracking-tight group-hover:text-accent">
-          {project.title}
-        </h3>
-        <span aria-hidden className="shrink-0 text-fg-muted transition-transform group-hover:translate-x-0.5">
-          →
-        </span>
-      </div>
+      <h3 className="line-clamp-2 font-medium tracking-tight group-hover:text-accent">
+        {project.title}
+      </h3>
 
-      <div className="mt-4 flex flex-wrap gap-1.5">
+      <div className="mt-8 -ml-2 flex flex-wrap gap-1.5">
         {project.category.map((c) => (
           <span
             key={c}
@@ -28,7 +23,15 @@ export function ProjectCard({ project }: { project: Project }) {
         ))}
       </div>
 
-      <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-fg-muted">
+      <span
+        aria-hidden
+        className="mt-auto self-end pt-4 text-fg-muted transition-transform group-hover:translate-x-0.5"
+      >
+        →
+      </span>
+
+      {/*
+      <p className="mt-2 line-clamp-3 text-xs leading-relaxed text-fg-muted">
         {project.summary}
       </p>
 
@@ -37,6 +40,7 @@ export function ProjectCard({ project }: { project: Project }) {
           <Tag key={s}>{s}</Tag>
         ))}
       </div>
+      */}
     </Link>
   );
 }

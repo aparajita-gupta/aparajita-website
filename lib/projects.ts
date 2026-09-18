@@ -40,7 +40,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "soybean-digital-phenotyping",
-    title: "Digital Phenotyping with Soybean Imagery",
+    title: "Digital Phenotyping",
     summary:
       "CNN pipeline linking soybean plant phenotypes to genotypes from 8K field images, reaching 96.4% accuracy.",
     category: ["ai"],
@@ -64,30 +64,8 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "ev-race-car-battery-system",
-    title: "EV Race Car Battery System",
-    summary:
-      "Electrical design of a 24s8p, 192-cell pack for a student-built EV — 1st place in Battery Efficiency at the EV Grand Prix.",
-    category: ["embedded"],
-    featured: true,
-    date: "2026-04",
-    stack: ["Battery management systems", "Thermal management", "KiCad", "Precharge circuits"],
-    role: "Electrical Engineer on Purdue IEEE Motorsports, Jan 2025 – present.",
-    problem:
-      "The team needed a safe, efficient high-voltage battery for a student-built electric race car that could sustain a full competition run while minimizing power loss.",
-    approach:
-      "Contributed to the electrical design of a 24s8p, 192-cell pack with 36 backup cells. Integrated nickel-strip interconnects and a battery management system with thermal management for safe motor control, then redesigned the automated precharge circuit to eliminate chatter and lag, replacing manual switch-based charging.",
-    challenges:
-      "Keeping resistive and thermal losses low across nearly 200 cells while maintaining safety margins, and getting the precharge circuit to switch cleanly with zero chatter under real load.",
-    outcome:
-      "Power loss held to ~5 W. The 4,320 Wh, 86.4 V pack sustained a 55-minute race and earned 1st Place in Battery Efficiency at the EV Grand Prix.",
-    images: [
-      // { src: "/projects/ev-race-car-battery-system/pack.jpg", alt: "Assembled battery pack" },
-    ],
-  },
-  {
     slug: "brightgrade",
-    title: "BrightGrade — Automated Deadline Tracking",
+    title: "BrightGrade",
     summary:
       "Dual-source pipeline that parses syllabi with an LLM and syncs 219 course tasks to Todoist and Calendar.",
     category: ["swe", "ai"],
@@ -187,10 +165,10 @@ export const projects: Project[] = [
   },
   {
     slug: "adaptive-cruise-control-analysis",
-    title: "Adaptive Cruise Control (ACC) Algorithm Development & Analysis",
+    title: "Adaptive Cruise Control Algorithm",
     summary:
       "MATLAB algorithm that automatically identifies first-order system parameters for an ACC system from noisy vehicle test data.",
-    category: ["ai"],
+    category: ["swe"],
     date: "2025-06",
     stack: ["MATLAB", "Signal Processing", "System Identification"],
     role: "Purdue University project, Summer 2025.",
@@ -206,7 +184,7 @@ export const projects: Project[] = [
   },
   {
     slug: "555-timer-police-lights",
-    title: "555 Timer Police Lights — Monostable & Astable Circuits",
+    title: "555 Timer Police Lights",
     summary:
       "Dual 555 timer circuit simulating a police strobe pattern, plus monostable/astable timing circuits verified against theory, LTspice, and an oscilloscope.",
     category: ["embedded"],
@@ -225,7 +203,7 @@ export const projects: Project[] = [
   },
   {
     slug: "lunar-lander-fpga",
-    title: "Lunar Lander — FPGA Digital System",
+    title: "Lunar Lander",
     summary:
       "Real-time lunar lander physics simulator on an FPGA — custom memory, BCD arithmetic unit, control FSM, and display driver, all in SystemVerilog.",
     category: ["embedded"],

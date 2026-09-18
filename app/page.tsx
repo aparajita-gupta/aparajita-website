@@ -2,7 +2,7 @@ import { sortedProjects } from "@/lib/projects";
 import { skillGroups } from "@/lib/skills";
 import { navLinks, site, socials } from "@/lib/site";
 import { ProjectsGrid } from "@/components/projects-grid";
-import { ArrowLink, Button, Eyebrow, IconBadge, Section } from "@/components/ui";
+import { ArrowLink, Button, Eyebrow, IconBadge, Section, Tag } from "@/components/ui";
 import { HashScroll } from "@/components/hash-scroll";
 
 export default function HomePage() {
@@ -18,19 +18,22 @@ export default function HomePage() {
       <section className="relative flex min-h-[75vh] flex-col justify-center">
         <div className="hero-glow" aria-hidden />
 
-        <Eyebrow>Computer Engineering @ Purdue</Eyebrow>
+        <Eyebrow>Computer Engineering @ Purdue University</Eyebrow>
 
         <h1 className="mt-5 text-6xl font-semibold tracking-tight sm:text-7xl lg:text-8xl">
           {site.name}
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-fg-muted">
-          Building across{" "}
-          <span className="gradient-text font-medium">hardware and software</span> —
-          embedded systems, machine learning, and backend automation.
+          Building across hardware and software,
+          embedded systems, and machine learning.
         </p>
 
         <div className="mt-6 flex flex-wrap items-center gap-3">
-          <Button href={primary.href} external={primary.href.startsWith("http")}>
+          <Button
+            href={primary.href}
+            variant="outline"
+            external={primary.href.startsWith("http")}
+          >
             {primary.label}
           </Button>
           {rest.map((s) => (
@@ -51,7 +54,7 @@ export default function HomePage() {
       </Section>
 
       <Section id="skills" title="Skills">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="flex flex-col gap-4">
           {skillGroups.map((g) => (
             <div
               key={g.title}
@@ -61,30 +64,14 @@ export default function HomePage() {
                 <IconBadge icon={g.icon} />
                 <h3 className="text-sm font-medium">{g.title}</h3>
               </div>
-              <ul className="mt-3 space-y-1 text-sm leading-relaxed text-fg-muted">
+              <div className="mt-3 flex flex-wrap gap-3.5">
                 {g.items.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span aria-hidden="true">·</span>
-                    <span>{item}</span>
-                  </li>
+                  <Tag key={item}>{item}</Tag>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
         </div>
-      </Section>
-
-      <Section title="Get in touch">
-        <p className="text-sm leading-relaxed text-fg-muted">
-          {site.availability} The fastest way to reach me is{" "}
-          <a href={`mailto:${site.email}`} className="text-accent hover:underline">
-            email
-          </a>
-          .
-        </p>
-        <p className="mt-3">
-          <ArrowLink href={navLinks[1].href}>More about me</ArrowLink>
-        </p>
       </Section>
     </div>
   );
