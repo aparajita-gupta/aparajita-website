@@ -2,7 +2,7 @@
 export const skillGroups: { title: string; icon: string; items: string[] }[] = [
   {
     title: "Languages",
-    icon: "</>",
+    icon: " </> ",
     items: ["C / C++", "C#", "Python", "Java", "SystemVerilog", "MATLAB", "Bash"],
   },
   {

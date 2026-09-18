@@ -213,8 +213,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 2.75rem;
+  width: 2.75rem;
   flex-shrink: 0;
   border-radius: 0.65rem;
   font-size: 1.3125rem; /* 25% up from 1.05rem */
