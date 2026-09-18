@@ -19,20 +19,7 @@ export const skillGroups: { title: string; icon: string; items: string[] }[] = [
       "Oscilloscope",
     ],
   },
-  {
-    title: "AI / ML & Data",
-    icon: "◆",
-    items: [
-      "PyTorch",
-      "TensorFlow / Keras",
-      "CNNs (ResNet-18, custom)",
-      "scikit-learn (KNN, SVM, Random Forest)",
-      "Image segmentation (OTSU, SAM)",
-      "NumPy / pandas / Polars / Matplotlib",
-      "EDA & feature extraction",
-      "Google Gemini API",
-    ],
-  },
+  
   {
     title: "Tools",
     icon: "▣",
