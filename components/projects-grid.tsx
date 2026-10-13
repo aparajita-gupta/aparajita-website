@@ -7,6 +7,7 @@ import {
   type ProjectCategory,
 } from "@/lib/projects";
 import { ProjectCard } from "./project-card";
+import { Reveal } from "./reveal";
 
 const filters: ("all" | ProjectCategory)[] = ["all", "swe", "embedded", "ai"];
 
@@ -39,8 +40,10 @@ export function ProjectsGrid({ projects }: { projects: Project[] }) {
       </div>
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {shown.map((p) => (
-          <ProjectCard key={p.slug} project={p} />
+        {shown.map((p, i) => (
+          <Reveal key={p.slug} delay={(i % 3) * 80}>
+            <ProjectCard project={p} />
+          </Reveal>
         ))}
       </div>
     </div>

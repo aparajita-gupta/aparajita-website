@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { categoryLabels, type Project } from "@/lib/projects";
+import { categoryColors, categoryLabels, type Project } from "@/lib/projects";
 import { Tag } from "./ui";
 
 export function ProjectCard({ project }: { project: Project }) {
@@ -16,7 +16,11 @@ export function ProjectCard({ project }: { project: Project }) {
         {project.category.map((c) => (
           <span
             key={c}
-            className="rounded-full bg-accent/10 px-2 py-0.5 font-mono text-[14px] uppercase tracking-wider text-accent"
+            className="rounded-full px-2 py-0.5 font-mono text-[14px] uppercase tracking-wider"
+            style={{
+              backgroundColor: `${categoryColors[c]}1a`,
+              color: categoryColors[c],
+            }}
           >
             {categoryLabels[c]}
           </span>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
+  categoryColors,
   categoryLabels,
   getProject,
   projects,
@@ -51,7 +52,11 @@ export default async function ProjectPage(
           {project.category.map((c) => (
             <span
               key={c}
-              className="rounded-full bg-accent/10 px-2 py-0.5 font-mono text-[14px] uppercase tracking-wider text-accent"
+              className="rounded-full px-2 py-0.5 font-mono text-[14px] uppercase tracking-wider"
+              style={{
+                backgroundColor: `${categoryColors[c]}1a`,
+                color: categoryColors[c],
+              }}
             >
               {categoryLabels[c]}
             </span>

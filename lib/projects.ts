@@ -15,6 +15,15 @@ export const categoryLabels: Record<ProjectCategory, string> = {
   ai: "AI / ML",
 };
 
+// One accent color per category, used to tint the badge on cards and the
+// detail page. Chosen to stay distinct from each other and from the site's
+// own violet accent color.
+export const categoryColors: Record<ProjectCategory, string> = {
+  swe: "#3b82f6", // blue
+  embedded: "#f59e0b", // amber
+  ai: "#ec4899", // pink
+};
+
 export type Project = {
   slug: string;
   title: string;
