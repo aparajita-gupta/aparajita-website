@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/sync-resume.js",
     "dev": "next dev",
+    "prebuild": "node scripts/sync-resume.js",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sync-resume": "node scripts/sync-resume.js"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
